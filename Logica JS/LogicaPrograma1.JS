@@ -24,12 +24,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Calcular el tiempo de ejecución del computador B
                     var numeroCiclosPc2 = relacionCiclos * numeroInstruccionesPc1; // Los ciclos del computador B son 4 veces los del A
                     var tiempoTotalEjecucionPc2 = (numeroCiclosPc2 / frecuenciaProcesador2).toFixed(9); // 9 decimales para representar nanosegundos
+                    var TiempoPc = tiempoTotalEjecucionPc1*1000000000;
 
                 // Mostrar resultados en SweetAlert2
                 Swal.fire({
                     icon: 'info',
                     title: 'Resultados',
-                    html: '<p>El tiempo total de ejecución de la PC 1 es: ' + tiempoTotalEjecucionPc1.toFixed(2) +' segundos'+ '</p>' +
+                    html: '<p>El tiempo total de ejecución de la PC 1 es: ' + TiempoPc +' nano segundos'+ '</p>' +
                         '<p>El tiempo total de ejecución de la PC 2 es: ' + tiempoTotalEjecucionPc2 +' nano segundos'+'</p>',
                     confirmButtonText: 'OK'
                 });
@@ -42,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     title: 'Resultados',
                     html: '<p>El tiempo total de ejecución de la PC 1 es: ' + tiempoTotalEjecucionPc1.toFixed(2) + '</p>' +
                         '<p>El tiempo total de ejecución de la PC 2 es: ' + tiempoTotalEjecucionPc2.toFixed(2) + '</p>' +
-                        '<p>La frecuencia de la PC 1 es: ' + frecuenciaPc1.toFixed(2) + '</p>' +
-                        '<p>La frecuencia de la PC 2 es: ' + frecuenciaPc2.toFixed(2) + '</p>',
+                        '<p>La frecuencia de la PC 1 es: ' + frecuenciaPc1.toFixed(2) + 'Mhz' + '</p>' +
+                        '<p>La frecuencia de la PC 2 es: ' + frecuenciaPc2.toFixed(2) + 'Mhz'+'</p>',
                     confirmButtonText: 'OK'
                 });
         }
